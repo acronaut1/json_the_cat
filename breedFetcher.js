@@ -16,13 +16,13 @@ const fetchBreedDescription = function(breedName, callback) {
       return;
     }
     const data = JSON.parse(body);
-    let catDesc = data[0];
+    let catDesc = data[0].description;
     
-    let CATdesc = () => {
-      console.log(`\n {[🐈-ID]: ${catDesc.id}  [Name]: ${catDesc.name} }:\n [Description]: ${catDesc.description}`);
-    };
+    // let CATdesc = () => {
+    //   console.log(`\n {[🐈-ID]: ${catDesc.id}  [Name]: ${catDesc.name} }:\n [Description]: ${catDesc.description}`);
+    // };
     
-    callback(null, CATdesc());
+    callback(null, catDesc);
   });
 };
 module.exports = { fetchBreedDescription };
